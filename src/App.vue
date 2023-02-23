@@ -2,18 +2,20 @@
   export default {
     data() {
       return {
-        titleClass: 'title'
+        counter: {
+          count: 0
+        }
+      }
+    },
+    methods: {
+      increment() {
+        this.counter.count++
       }
     }
   }
 </script>
 
 <template>
-  <h1 :class="titleClass">Hello World</h1>
+  <p>Count is {{counter.count}}</p>
+  <button @click="increment">Add</button>
 </template>
-
-<style>
-  .title {
-    color: red
-  }
-</style>
